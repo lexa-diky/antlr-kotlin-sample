@@ -20,7 +20,7 @@ dependencies {
 
 tasks.generateGrammarSource {
     outputDirectory = file("${project.buildDir}/generated/sources/main/kotlin/antlr")
-    arguments = listOf("-package", "io.github.lexadiky.sample.json")
+    arguments = listOf("-package", "io.github.lexadiky.sample.properties")
 }
 
 tasks.test {
@@ -38,11 +38,6 @@ java {
 
 sourceSets {
     main {
-        java {
-            srcDir(tasks.generateGrammarSource)
-        }
-    }
-    test {
         java {
             srcDir(tasks.generateGrammarSource)
         }
